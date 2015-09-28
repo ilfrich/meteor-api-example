@@ -1,0 +1,91 @@
+<template name="dashboard">
+    <div id="view-dashboard">
+		<h2>Dashboard</h2>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<label for="update-interval">Update Interval</label>
+				<select id="update-interval" class="form-control">
+					<option value="" selected="{{updateInterval ''}}">Manual</option>
+					<option value="5000" selected="{{updateInterval 5000}}">5 seconds</option>
+					<option value="15000" selected="{{updateInterval 15000}}">15 seconds</option>
+					<option value="30000" selected="{{updateInterval 30000}}">30 seconds</option>
+					<option value="60000" selected="{{updateInterval 60000}}">60 seconds</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6 section" id="client-api">
+				<div style="display: none;" class="overlay">
+					<span class="fa fa-spinner fa-spin fa-5x"></span>
+				</div>
+				<h2>
+					Client API Call Example
+					<span class="fa fa-refresh"></span>
+				</h2>
+				<div class="button-grp" data-category="client">
+					{{#each cities}}
+						<button class="btn {{btnClass 'client'}}" data-id="{{this.id}}">{{this.name}}</button>
+					{{/each}}
+				</div>
+
+				{{#with clientWeatherData}}
+					<ul>
+						<li>
+							Coordinates: {{coord.lat}}, {{coord.lon}}
+						</li>
+						<li>
+							Last Update: {{formatDateDefault datetime}}
+						</li>
+						<li>
+							Humidity: {{main.humidity}}%
+						</li>
+						<li>
+							Pressure: {{main.pressure}}hPa
+						</li>
+						<li>
+							Temperature (Celsius): {{main.temp}} ({{main.temp_min}} - {{main.temp_max}})
+						</li>
+					</ul>
+
+				{{/with}}
+			</div>
+			<div class="col-xs-6 section" id="server-api">
+				<div style="display: none;" class="overlay">
+					<span class="fa fa-spinner fa-spin fa-5x"></span>
+				</div>
+				<h2>
+					Server API Call Example
+					<span class="fa fa-refresh"></span>
+				</h2>
+				<div class="button-grp" data-category="server">
+					{{#each cities}}
+						<button class="btn {{btnClass 'server'}}" data-id="{{this.id}}">{{this.name}}</button>
+					{{/each}}
+				</div>
+
+				{{#with serverWeatherData}}
+					<ul>
+						<li>
+							Coordinates: {{coord.lat}}, {{coord.lon}}
+						</li>
+						<li>
+							Last Update: {{formatDateDefault datetime}}
+						</li>
+						<li>
+							Humidity: {{main.humidity}}%
+						</li>
+						<li>
+							Pressure: {{main.pressure}}hPa
+						</li>
+						<li>
+							Temperature (Celsius): {{main.temp}} ({{main.temp_min}} - {{main.temp_max}})
+						</li>
+					</ul>
+
+				{{/with}}
+			</div>
+		</div>
+    </div>
+</template>

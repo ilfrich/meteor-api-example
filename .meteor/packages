@@ -1,0 +1,47 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+
+################ ESSENTIALS ################
+meteor-platform
+less
+force-ssl
+jquery
+accounts-password
+peerlibrary:fs
+random
+markdown
+aldeed:collection2
+matb33:collection-hooks
+tmeasday:publish-counts
+meteorhacks:aggregate
+iron:router
+momentjs:moment
+twbs:bootstrap
+browser-policy
+reactive-var
+http
+#materialize:materialize
+meteorhacks:fast-render
+chuangbo:cookie
+
+################ OPTIONAL / HELPFUL PACKAGES ################
+tsega:bootstrap3-datetimepicker
+mrt:bootstrap3-typeahead
+mrt:filesaver
+johdirr:meteor-git-rev
+#matteodem:gridster
+peernohell:c3
+juliancwirko:s-alert
+fortawesome:fontawesome
+risul:bootstrap-colorpicker
+
+
+# image resizing on the client side
+thinksoftware:image-resize-client
+
+ostrio:loggerfile
+gadicohen:headers
