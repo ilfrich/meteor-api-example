@@ -11,6 +11,7 @@
 
 * Login screen where the user can login with credentials admin/admin or test/test.
 * Dashboard screen with weather data in 2 sections (one labeled server-side, one labeled client-side).
+* Additional drop-down to adjust the automatic update interval of the API data.
 
 **Important files**
 
@@ -26,11 +27,15 @@ prevent the data from being displayed correctly.
 
 On the server side, the method is using a Promise/Future to return a result after the API call has finished.
 
-### Client API Call
+## Client API Call
 
 The weather data retrieved by the client is stored in a reactive variable in the template. The data is retrieved via a
  standard AJAX call and the result written to the reactive variable, which triggers the re-execution of the helper and
  returns the result.
+
+## Disclaimer
+
+This example is using the API 2.5 of openweathermap.org
 
 
 

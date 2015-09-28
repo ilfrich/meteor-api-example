@@ -72,14 +72,11 @@ function checkAdmin() {
  */
 Router.route('/', {
     waitOn: function() {
-        return [Meteor.subscribe('allCategories'), Meteor.subscribe('newEntries', 10)];
     },
     action: function() {
         this.render('dashboard');
     },
     data: {
-        categories: dbCategories.find(),
-        newEntries: dbEntries.find()
     }
 });
 
