@@ -5,7 +5,7 @@
 * [Content](#content)
 * [Server API Call](#server-api-call)
 * [Client API Call](#client-api-call)
-
+* [Disclaimer](#disclaimer)
 
 ## Content
 
